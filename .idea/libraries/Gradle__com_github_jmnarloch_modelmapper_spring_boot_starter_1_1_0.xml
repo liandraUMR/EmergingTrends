@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.jmnarloch:modelmapper-spring-boot-starter:1.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jmnarloch/modelmapper-spring-boot-starter/1.1.0/f8b19815fb6637a959c68ddb9853d9e60a58199b/modelmapper-spring-boot-starter-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jmnarloch/modelmapper-spring-boot-starter/1.1.0/73a88ce996187089a45639b806ca6ed007b427a9/modelmapper-spring-boot-starter-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
