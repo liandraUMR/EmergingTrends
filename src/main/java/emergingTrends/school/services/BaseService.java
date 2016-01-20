@@ -1,8 +1,8 @@
-package emergingTrends.services;
+package emergingTrends.school.services;
 
-import emergingTrends.repositories.ClubRepository;
-import emergingTrends.repositories.SchoolRepository;
-import emergingTrends.repositories.StudentRepository;
+import emergingTrends.school.repositories.ClubRepository;
+import emergingTrends.school.repositories.SchoolRepository;
+import emergingTrends.school.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class BaseService
 {
-
     @Autowired
     ClubRepository clubRepository;
 
@@ -21,4 +20,5 @@ public class BaseService
 
     @Autowired
     StudentRepository studentRepository;
+
 }

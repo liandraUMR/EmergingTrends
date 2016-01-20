@@ -1,6 +1,6 @@
-package emergingTrends.entities;
+package emergingTrends.school.entities;
 
-import org.hibernate.annotations.Check;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,10 +20,22 @@ public class Club
     private String name;
 
     @ManyToOne
+    @NotNull
     private School school;
 
+    @Range(min=2)
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "club")
     private Set<Student> students;
+
+    public Club()
+    {
+
+    }
+
+    public Club(String name) {
+        this.id=0;
+        this.name = name;
+    }
 
     public long getId()
     {

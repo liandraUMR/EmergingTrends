@@ -1,0 +1,20 @@
+
+
+
+Prezi + intro 10min
+
+UNIT TESTING & mock 7min - 10min
+
+INTEGRATION ERRORS FUNN - 10min
+1. error involving minimum range on club
+2. error involving deletes
+
+TEST DRIVEN DEPLOYMENT 5min?
+
+Behavior driven deployment 5min?
+
+other tools you may see
+    -automated tests that run every so often
+
+TDD things look good on paper
+    -doesnt look so good irl

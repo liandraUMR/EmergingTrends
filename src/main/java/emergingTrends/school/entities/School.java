@@ -1,7 +1,6 @@
-package emergingTrends.entities;
+package emergingTrends.school.entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 /**
@@ -18,8 +17,19 @@ public class School
     private String name;
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "school")
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "school")
     private Set<Club> clubs;
+
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "school")
+    private Set<Student> students;
+
+    public School(String name) {
+        this.name = name;
+    }
+
+    public School(){
+
+    }
 
     public long getId()
     {
@@ -49,5 +59,13 @@ public class School
     public void setClubs(Set<Club> clubs)
     {
         this.clubs = clubs;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
     }
 }

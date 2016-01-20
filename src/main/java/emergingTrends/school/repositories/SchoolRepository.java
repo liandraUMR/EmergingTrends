@@ -1,6 +1,6 @@
-package emergingTrends.repositories;
+package emergingTrends.school.repositories;
 
-import emergingTrends.entities.School;
+import emergingTrends.school.entities.School;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

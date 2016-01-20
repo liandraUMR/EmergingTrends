@@ -1,13 +1,14 @@
-package emergingTrends.components;
+package emergingTrends.school.components;
 
-import emergingTrends.services.SeedService;
+import emergingTrends.school.services.SeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by 631152 on 1/14/2016.
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
 @Component
 public class AfterLoadComponent implements CommandLineRunner
 {

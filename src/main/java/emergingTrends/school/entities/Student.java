@@ -1,7 +1,8 @@
-package emergingTrends.entities;
+package emergingTrends.school.entities;
+
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /**
  * Created by 631152 on 1/14/2016.
@@ -19,8 +20,20 @@ public class Student
     @ManyToOne
     private Club club;
 
+    @ManyToOne
+    private School school;
+
+    @Range(min=0, max=4)
+    private double gpa;
+
+    public Student()
+    {
+
+    }
+
     public Student(String name)
     {
+        this.id = 0;
         this.name = name;
     }
 
@@ -52,5 +65,21 @@ public class Student
     public void setClub(Club club)
     {
         this.club = club;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
     }
 }
