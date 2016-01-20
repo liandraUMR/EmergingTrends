@@ -5,6 +5,7 @@ import emergingTrends.school.entities.School;
 import emergingTrends.school.entities.Student;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -65,9 +66,21 @@ public class StudentService extends BaseService
         update(student);
         return true;
     }
+    public boolean removeClub()
+    {
+        return false;
+    }
+    public boolean removeSchool()
+    {
+        return false;
+    }
 
     public Student findByName(String name)
     {
         return studentRepository.findByName(name);
+    }
+
+    public List<Student> findAll(){
+        return studentRepository.findAll();
     }
 }

@@ -61,6 +61,7 @@ public class School
         this.clubs = clubs;
     }
 
+
     public Set<Student> getStudents() {
         return students;
     }

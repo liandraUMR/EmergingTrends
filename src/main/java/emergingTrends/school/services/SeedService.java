@@ -1,7 +1,10 @@
 package emergingTrends.school.services;
 
 import emergingTrends.school.entities.Student;
+import emergingTrends.school.services.BaseService;
 import org.springframework.stereotype.Service;
+
+import java.io.*;
 
 
 /**
@@ -10,14 +13,5 @@ import org.springframework.stereotype.Service;
 @Service
 public class SeedService extends BaseService
 {
-    public void updateSeedData()
-    {
-        Student bob = new Student("bob");
-        bob.setGpa(4);
-        Student frank = new Student("frank");
-        Student amy = new Student("amy");
-        studentRepository.saveAndFlush(bob);
-        studentRepository.saveAndFlush(frank);
-        studentRepository.saveAndFlush(amy);
-    }
+
 }

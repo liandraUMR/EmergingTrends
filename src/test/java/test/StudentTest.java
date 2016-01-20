@@ -10,6 +10,10 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.dao.DataIntegrityViolationException;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by 631152 on 1/14/2016.
  */
@@ -23,7 +27,7 @@ public class StudentTest extends BaseTest
     public void setupStatic()
     {
         sait = new School("sait");
-        club = new Club("heroclub");
+       // club = new Club("heroclub");
         setup();
     }
 
@@ -33,8 +37,19 @@ public class StudentTest extends BaseTest
         {
             return;
         }
+        schoolRepository.saveAndFlush(sait);
+        club.setSchool(schoolRepository.findByName("sait"));
         clubRepository.save(club);
-        schoolRepository.save(sait);
+        List<Student> students = studentRepository.findAll();
+        club.setStudents(students);
+        for (Student student: students)
+        {
+           student.setClub(club);
+            studentRepository.saveAndFlush(student);
+        }
+
+        club.setSchool(schoolRepository.findByName("sait"));
+        clubRepository.save(club);
         setUpIsDone = true;
     }
 
@@ -64,6 +79,7 @@ public class StudentTest extends BaseTest
   //  @Ignore
     public void addClub()
     {
+
         Student student = studentService.findByName("bob");
         Club heroClub = clubRepository.findByName("heroclub");
         boolean result = studentService.addClub(heroClub,student);

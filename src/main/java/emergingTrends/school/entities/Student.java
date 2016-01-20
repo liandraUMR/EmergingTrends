@@ -3,6 +3,7 @@ package emergingTrends.school.entities;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by 631152 on 1/14/2016.
@@ -21,6 +22,7 @@ public class Student
     private Club club;
 
     @ManyToOne
+    @NotNull
     private School school;
 
     @Range(min=0, max=4)
@@ -31,10 +33,16 @@ public class Student
 
     }
 
-    public Student(String name)
+    public Student(String name,School school)
     {
         this.id = 0;
         this.name = name;
+    }
+    public Student(String name,School school,Club club)
+    {
+        this.id = 0;
+        this.name = name;
+        this.club = club;
     }
 
     public long getId()

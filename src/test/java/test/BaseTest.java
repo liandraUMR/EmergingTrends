@@ -7,6 +7,7 @@ import emergingTrends.school.repositories.SchoolRepository;
 import emergingTrends.school.repositories.StudentRepository;
 import emergingTrends.school.services.ClubService;
 import emergingTrends.school.services.SchoolService;
+import emergingTrends.school.services.SeedService;
 import emergingTrends.school.services.StudentService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,4 +41,7 @@ public class BaseTest
 
     @Autowired
     ClubService clubService;
+
+    @Autowired
+    public SeedService seedService;
 }

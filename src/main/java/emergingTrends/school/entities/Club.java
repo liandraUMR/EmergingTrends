@@ -1,9 +1,12 @@
 package emergingTrends.school.entities;
 
+import com.sun.istack.internal.Nullable;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,16 +26,17 @@ public class Club
     @NotNull
     private School school;
 
-    @Range(min=2)
+    @Size(min=2)
+    @Nullable
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "club")
-    private Set<Student> students;
+    private List<Student> students;
 
     public Club()
     {
 
     }
 
-    public Club(String name) {
+    public Club(String name,School school) {
         this.id=0;
         this.name = name;
     }
@@ -67,12 +71,13 @@ public class Club
         this.school = school;
     }
 
-    public Set<Student> getStudents()
+
+    public List<Student> getStudents()
     {
         return students;
     }
 
-    public void setStudents(Set<Student> students)
+    public void setStudents(List<Student> students)
     {
         this.students = students;
     }

@@ -25,6 +25,7 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 
@@ -34,6 +35,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-validation')
 	compile('org.springframework.boot:spring-boot-starter-web')
+
+
 	runtime('org.hsqldb:hsqldb')
 	runtime('mysql:mysql-connector-java')
 
@@ -41,8 +44,8 @@ dependencies {
 	testCompile('org.hsqldb:hsqldb')
 	compile("mysql:mysql-connector-java:5.1.37")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.hsqldb:hsqldb:2.3.3');
-	testCompile('org.powermock:powermock-mockito-release-full:1.5.4');
+	testCompile('org.hsqldb:hsqldb:2.3.3')
+	testCompile ("org.mockito:mockito-core:1.+")
 }
 
 
@@ -53,6 +56,3 @@ eclipse {
 	}
 }
 
-task wrapper(type: Wrapper) {
-	gradleVersion = '2.9'
-}
