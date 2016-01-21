@@ -1,8 +1,7 @@
 package test;
 
-import emergingTrends.school.entities.School;
-import emergingTrends.school.entities.Student;
-import junit.framework.Assert;
+import emergingTrends.entities.School;
+import emergingTrends.entities.Student;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -38,7 +37,7 @@ public class SchoolTest extends BaseTest {
     public void addStudent() {
         Student student = studentService.findByName("bob");
         //boolean result = schoolService.addStudent(sait,student);
-        //Assert.assertEquals(result,true);
+        //assertEquals(result,true);
     }
 
     @Test

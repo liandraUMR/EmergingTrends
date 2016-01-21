@@ -1,4 +1,4 @@
-package emergingTrends.school.entities;
+package emergingTrends.entities;
 
 import com.sun.istack.internal.Nullable;
 
@@ -31,19 +31,17 @@ public class Club {
     public Club() {
 
     }
+    public Club(String name)
+    {
+        this.id=0;
+        this.name = name;
+    }
 
     public Club(String name, School school) {
         this.id = 0;
         this.name = name;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

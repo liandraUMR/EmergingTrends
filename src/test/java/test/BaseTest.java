@@ -2,13 +2,13 @@ package test;
 
 
 import emergingTrends.EmergingTrendsApplication;
-import emergingTrends.school.repositories.ClubRepository;
-import emergingTrends.school.repositories.SchoolRepository;
-import emergingTrends.school.repositories.StudentRepository;
-import emergingTrends.school.services.ClubService;
-import emergingTrends.school.services.SchoolService;
-import emergingTrends.school.services.SeedService;
-import emergingTrends.school.services.StudentService;
+import emergingTrends.repositories.ClubRepository;
+import emergingTrends.repositories.SchoolRepository;
+import emergingTrends.repositories.StudentRepository;
+import emergingTrends.services.ClubService;
+import emergingTrends.services.SchoolService;
+import emergingTrends.services.SeedService;
+import emergingTrends.services.StudentService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;

@@ -1,6 +1,6 @@
-package emergingTrends.school.services;
+package emergingTrends.services;
 
-import emergingTrends.school.entities.School;
+import emergingTrends.entities.School;
 import org.springframework.stereotype.Service;
 
 /**

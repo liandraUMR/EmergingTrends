@@ -1,12 +1,13 @@
 package test;
 
-import emergingTrends.school.entities.Club;
-import emergingTrends.school.entities.School;
-import emergingTrends.school.entities.Student;
-import junit.framework.Assert;
+import emergingTrends.entities.Club;
+import emergingTrends.entities.School;
+import emergingTrends.entities.Student;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class StudentTest extends BaseTest {
     @Before
     public void setupStatic() {
         sait = new School("sait");
-        // club = new Club("heroclub");
+        club = new Club("heroclub");
         setup();
     }
 
@@ -50,7 +51,7 @@ public class StudentTest extends BaseTest {
         Student student = studentService.findByName("bob");
         School sait = schoolRepository.findByName("sait");
         boolean result = studentService.addSchool(sait, student);
-        Assert.assertEquals(result, true);
+        assertEquals(result, true);
     }
 
     @Test
@@ -59,7 +60,7 @@ public class StudentTest extends BaseTest {
         Student student = studentService.findByName("bob");
         School sait = schoolRepository.findByName("sait");
         boolean result = studentService.addSchool(sait, student);
-        Assert.assertEquals(result, true);
+        assertEquals(result, true);
 
         sait = schoolRepository.findByName("sait");
         schoolRepository.delete(sait);
@@ -68,12 +69,10 @@ public class StudentTest extends BaseTest {
     @Test
     //  @Ignore
     public void addClub() {
-
         Student student = studentService.findByName("bob");
         Club heroClub = clubRepository.findByName("heroclub");
         boolean result = studentService.addClub(heroClub, student);
-        Assert.assertEquals(result, true);
-
+        assertEquals(result, true);
     }
 
 

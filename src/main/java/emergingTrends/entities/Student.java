@@ -1,4 +1,4 @@
-package emergingTrends.school.entities;
+package emergingTrends.entities;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -25,19 +25,23 @@ public class Student {
     private School school;
 
     @Range(min = 0, max = 4)
+    @NotNull
     private double gpa;
 
     public Student() {
 
     }
-
-    public Student(String name, School school) {
+    public Student(String name, School school,double gpa) {
         this.id = 0;
         this.name = name;
+        this.school = school;
+        this.gpa = gpa;
     }
 
-    public Student(String name, School school, Club club) {
+    public Student(String name, School school,double gpa, Club club) {
         this.id = 0;
+        this.school = school;
+        this.gpa = gpa;
         this.name = name;
         this.club = club;
     }

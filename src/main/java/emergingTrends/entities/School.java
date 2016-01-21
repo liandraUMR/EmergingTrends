@@ -1,4 +1,4 @@
-package emergingTrends.school.entities;
+package emergingTrends.entities;
 
 import javax.persistence.*;
 import java.util.Set;

@@ -1,7 +1,7 @@
-package emergingTrends.school.repositories;
+package emergingTrends.repositories;
 
-import emergingTrends.school.entities.Club;
-import emergingTrends.school.entities.Student;
+import emergingTrends.entities.Club;
+import emergingTrends.entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

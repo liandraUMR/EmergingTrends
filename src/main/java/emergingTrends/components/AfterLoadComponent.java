@@ -1,6 +1,6 @@
-package emergingTrends.school.components;
+package emergingTrends.components;
 
-import emergingTrends.school.services.SeedService;
+import emergingTrends.services.SeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ public class AfterLoadComponent implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        //seedService.updateSeedData();
+        seedService.updateSeedData();
 
     }
 }

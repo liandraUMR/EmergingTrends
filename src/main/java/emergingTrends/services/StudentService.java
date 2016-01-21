@@ -1,8 +1,8 @@
-package emergingTrends.school.services;
+package emergingTrends.services;
 
-import emergingTrends.school.entities.Club;
-import emergingTrends.school.entities.School;
-import emergingTrends.school.entities.Student;
+import emergingTrends.entities.Club;
+import emergingTrends.entities.School;
+import emergingTrends.entities.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
