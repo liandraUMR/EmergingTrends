@@ -43,7 +43,7 @@ dependencies {
     compile('com.github.jmnarloch:modelmapper-spring-boot-starter:1.1.0')
     testCompile('org.hsqldb:hsqldb')
     compile("mysql:mysql-connector-java:5.1.37")
-    testCompile('org.springframework.boot:spring-boot-starter-after.test')
+    testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile('org.hsqldb:hsqldb:2.3.3')
     testCompile("org.mockito:mockito-core:1.+")
 }
