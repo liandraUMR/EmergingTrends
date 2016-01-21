@@ -1,4 +1,4 @@
-package test;
+package test.before;
 
 import emergingTrends.entities.School;
 import emergingTrends.repositories.ClubRepository;
@@ -17,9 +17,10 @@ import static org.mockito.Matchers.any;
 /**
  * Created by bmart on 20-Jan-2016.
  */
-public class FileServiceTest extends BaseTest{
+public class FileServiceTest extends BaseTest {
+
     String schoolSeed ="school:sait";
-    String fileName="src/after.test/resources/testFile.txt";
+    String fileName="src/test/resources/testFile.txt";
     FileService fileService;
     @Before
     public void setup()
@@ -42,25 +43,20 @@ public class FileServiceTest extends BaseTest{
         assertEquals(true,result);
     }
 
-    //mock with stubbing
+    //TODO DEMO mock with stubbing
     @Test
     public void parseSchoolTest()
     {
         //setup
-        fileService = Mockito.mock(FileService.class);
-        School school = Mockito.mock(School.class);
 
-        Mockito.when(schoolRepository.saveAndFlush(any(School.class))).thenReturn(school);
 
-        FileService fileService = new FileService();
-        fileService.schoolRepository = schoolRepository;
+
 
         //execution
-        school = (School) fileService.parser(schoolSeed);
+
 
         //checks
-        Mockito.verify(schoolRepository).saveAndFlush(any(School.class));
-        assertThat(school,instanceOf(School.class));
+
 
     }
 
@@ -81,15 +77,7 @@ public class FileServiceTest extends BaseTest{
         assertTrue(result);
     }
 
-    @Test
-    public void test()
-    {
-        fileService = new FileService();
-        fileService.schoolRepository = schoolRepository;
-        School school = Mockito.mock(School.class);
-        Mockito.when(schoolRepository.saveAndFlush(any(School.class))).thenReturn(school);
 
-    }
 
 }
 

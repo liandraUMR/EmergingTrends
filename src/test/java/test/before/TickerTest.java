@@ -1,13 +1,12 @@
-package test;
+package test.before;
 
 
 import emergingTrends.bdd.Ticker;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by bmart on 21-Jan-2016.
  */
@@ -37,10 +36,6 @@ public class TickerTest {
     @Test
     public void withBDD()
     {
-        double expectval = currentTimer + ticker.getTicker();
-        ticker.setTime(currentTimer);
-        ticker.tickTime();
-
-        assertEquals(expectval,ticker.getTime(),0);
+        //TODO BDD testing
     }
 }

@@ -1,14 +1,14 @@
-package test;
+package test.after;
 
 import emergingTrends.entities.School;
 import emergingTrends.entities.Student;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import test.after.BaseTest;
 
 import java.util.Set;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by bmart on 19-Jan-2016.
@@ -28,27 +28,14 @@ public class SchoolTest extends BaseTest {
         if (setUpIsDone) {
             return;
         }
-        schoolRepository.save(sait);
+       // schoolRepository.save(sait);
         setUpIsDone = true;
     }
 
     @Test
-    @Ignore
-    public void addStudent() {
-        Student student = studentService.findByName("bob");
-        //boolean result = schoolService.addStudent(sait,student);
-        //assertEquals(result,true);
-    }
-
-    @Test
-    @Ignore
-    public void findStudent() {
-        Student student = studentService.findByName("bob");
-        //boolean result = schoolService.addStudent(sait,student);
-        // Assert.assertEquals(result,true);
-
+    public void findStudents() {
         School sait2 = schoolRepository.findByName("sait");
         Set<Student> students = sait2.getStudents();
-        assertEquals(1, students.size());
+        assertEquals(3, students.size());
     }
 }

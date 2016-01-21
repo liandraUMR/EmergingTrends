@@ -1,0 +1,23 @@
+
+
+
+
+
+public Club create(Club club,School school, List<Student> students) {
+
+        school = schoolRepository.findByName(school.getName());
+        for (Student student : students) {
+            student = studentRepository.findByName(student.getName());
+        }
+        club.setName(club.getName());
+        club.setSchool(school);
+        clubRepository.save(club);
+        club.setStudents(students);
+
+        for (Student student : students) {
+            student.setClub(club);
+            studentRepository.saveAndFlush(student);
+        }
+        clubRepository.saveAndFlush(club);
+        return club;
+    }

@@ -1,4 +1,4 @@
-package test;
+package test.after;
 
 import emergingTrends.entities.Club;
 import emergingTrends.entities.School;
@@ -16,28 +16,17 @@ import java.util.List;
  */
 public class StudentTest extends BaseTest {
     private static boolean setUpIsDone = false;
-    School sait;
     Club club;
 
     @Before
     public void setupStatic() {
-        sait = new School("sait");
-        club = new Club("heroclub");
+
         setup();
     }
 
     private void setup() {
         if (setUpIsDone) {
             return;
-        }
-        schoolRepository.saveAndFlush(sait);
-        club.setSchool(schoolRepository.findByName("sait"));
-        clubRepository.save(club);
-        List<Student> students = studentRepository.findAll();
-        club.setStudents(students);
-        for (Student student : students) {
-            student.setClub(club);
-            studentRepository.saveAndFlush(student);
         }
 
         club.setSchool(schoolRepository.findByName("sait"));
@@ -77,3 +66,4 @@ public class StudentTest extends BaseTest {
 
 
 }
+

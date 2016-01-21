@@ -1,4 +1,4 @@
-package test;
+package test.before;
 import org.junit.Before;
 
 /**
@@ -20,4 +20,5 @@ public class ClubTest extends BaseTest {
         }
         setUpIsDone = true;
     }
+    //TODO TDD create a club
 }
