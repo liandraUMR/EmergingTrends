@@ -1,20 +1,17 @@
 package emergingTrends.school.entities;
 
 import com.sun.istack.internal.Nullable;
-import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by 631152 on 1/14/2016.
  */
 @Entity
-public class Club
-{
+public class Club {
     @Id
     @GeneratedValue
     private long id;
@@ -26,59 +23,50 @@ public class Club
     @NotNull
     private School school;
 
-    @Size(min=2)
+    @Size(min = 2)
     @Nullable
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "club")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "club")
     private List<Student> students;
 
-    public Club()
-    {
+    public Club() {
 
     }
 
-    public Club(String name,School school) {
-        this.id=0;
+    public Club(String name, School school) {
+        this.id = 0;
         this.name = name;
     }
 
-    public long getId()
-    {
+    public long getId() {
         return id;
     }
 
-    public void setId(long id)
-    {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public School getSchool()
-    {
+    public School getSchool() {
         return school;
     }
 
-    public void setSchool(School school)
-    {
+    public void setSchool(School school) {
         this.school = school;
     }
 
 
-    public List<Student> getStudents()
-    {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students)
-    {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 }

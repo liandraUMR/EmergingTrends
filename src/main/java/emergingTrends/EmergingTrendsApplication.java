@@ -10,9 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "emergingTrends.school.repositories")
 public class EmergingTrendsApplication {
 
-	@Autowired
-	SeedService seedService;
-	public static void main(String[] args) {
-		SpringApplication.run(EmergingTrendsApplication.class, args);
-	}
+    @Autowired
+    SeedService seedService;
+
+    public static void main(String[] args) {
+        SpringApplication.run(EmergingTrendsApplication.class, args);
+    }
 }

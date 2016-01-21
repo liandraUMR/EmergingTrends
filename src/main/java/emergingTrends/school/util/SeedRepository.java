@@ -4,16 +4,13 @@ import emergingTrends.school.entities.Club;
 import emergingTrends.school.entities.School;
 import emergingTrends.school.entities.Student;
 
-import java.util.List;
-
 /**
  * Created by 631152 on 1/20/2016.
  */
-public interface EntityController
-{
+public interface SeedRepository {
     School createSchool(String school);
 
-    Student createStudent(String name,School school,Club club);
+    Student createStudent(String name, School school, Club club);
 
     Club createClub(String name, School school);
 }

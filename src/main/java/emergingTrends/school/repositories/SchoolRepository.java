@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
  * Created by 631152 on 1/14/2016.
  */
 @Repository
-public interface SchoolRepository extends JpaRepository<School,Long>
-{
+public interface SchoolRepository extends JpaRepository<School, Long> {
     School findByName(String name);
 }

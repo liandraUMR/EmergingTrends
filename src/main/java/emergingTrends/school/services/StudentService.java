@@ -6,17 +6,14 @@ import emergingTrends.school.entities.Student;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by 631152 on 1/14/2016.
  */
 @Service
-public class StudentService extends BaseService
-{
-    private boolean update(Student student)
-    {
-        if(student.getId() != 0) {
+public class StudentService extends BaseService {
+    private boolean update(Student student) {
+        if (student.getId() != 0) {
             studentRepository.saveAndFlush(student);
             return true;
         }
@@ -25,11 +22,10 @@ public class StudentService extends BaseService
     }
 
 
-    public boolean delete(Student student)
-    {
-        student =findByName(student.getName());
+    public boolean delete(Student student) {
+        student = findByName(student.getName());
 
-        if(student== null)
+        if (student == null)
             return false;
 
         studentRepository.delete(student);
@@ -37,50 +33,43 @@ public class StudentService extends BaseService
     }
 
 
-    public boolean create(Student student)
-    {
-        if(student.getId() == 0)
-        {
+    public boolean create(Student student) {
+        if (student.getId() == 0) {
             studentRepository.save(student);
             return true;
-        }else
-        return false;
+        } else
+            return false;
     }
 
-    public boolean addSchool(School school, Student student)
-    {
-        if(student.getGpa()< 2)
-        {
+    public boolean addSchool(School school, Student student) {
+        if (student.getGpa() < 2) {
             return false;
-        }
-        else
-        {
+        } else {
             student.setSchool(school);
             update(student);
             return true;
         }
     }
-    public boolean addClub(Club club,Student student)
-    {
+
+    public boolean addClub(Club club, Student student) {
         student.setClub(club);
         update(student);
         return true;
     }
-    public boolean removeClub()
-    {
-        return false;
-    }
-    public boolean removeSchool()
-    {
+
+    public boolean removeClub() {
         return false;
     }
 
-    public Student findByName(String name)
-    {
+    public boolean removeSchool() {
+        return false;
+    }
+
+    public Student findByName(String name) {
         return studentRepository.findByName(name);
     }
 
-    public List<Student> findAll(){
+    public List<Student> findAll() {
         return studentRepository.findAll();
     }
 }

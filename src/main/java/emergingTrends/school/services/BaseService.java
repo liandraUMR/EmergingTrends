@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
  * Created by 631152 on 1/14/2016.
  */
 @Service
-public class BaseService
-{
+public class BaseService {
     @Autowired
     ClubRepository clubRepository;
 

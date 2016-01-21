@@ -7,8 +7,7 @@ import java.util.Set;
  * Created by 631152 on 1/14/2016.
  */
 @Entity
-public class School
-{
+public class School {
     @Id
     @GeneratedValue
     private long id;
@@ -17,47 +16,41 @@ public class School
     private String name;
 
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "school")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "school")
     private Set<Club> clubs;
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "school")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "school")
     private Set<Student> students;
 
     public School(String name) {
         this.name = name;
     }
 
-    public School(){
+    public School() {
 
     }
 
-    public long getId()
-    {
+    public long getId() {
         return id;
     }
 
-    public void setId(long id)
-    {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Set<Club> getClubs()
-    {
+    public Set<Club> getClubs() {
         return clubs;
     }
 
-    public void setClubs(Set<Club> clubs)
-    {
+    public void setClubs(Set<Club> clubs) {
         this.clubs = clubs;
     }
 

@@ -9,8 +9,7 @@ import javax.validation.constraints.NotNull;
  * Created by 631152 on 1/14/2016.
  */
 @Entity
-public class Student
-{
+public class Student {
     @Id
     @GeneratedValue
     private long id;
@@ -25,53 +24,45 @@ public class Student
     @NotNull
     private School school;
 
-    @Range(min=0, max=4)
+    @Range(min = 0, max = 4)
     private double gpa;
 
-    public Student()
-    {
+    public Student() {
 
     }
 
-    public Student(String name,School school)
-    {
+    public Student(String name, School school) {
         this.id = 0;
         this.name = name;
     }
-    public Student(String name,School school,Club club)
-    {
+
+    public Student(String name, School school, Club club) {
         this.id = 0;
         this.name = name;
         this.club = club;
     }
 
-    public long getId()
-    {
+    public long getId() {
         return id;
     }
 
-    public void setId(long id)
-    {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Club getClub()
-    {
+    public Club getClub() {
         return club;
     }
 
-    public void setClub(Club club)
-    {
+    public void setClub(Club club) {
         this.club = club;
     }
 

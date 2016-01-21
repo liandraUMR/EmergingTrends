@@ -24,24 +24,19 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 @SpringApplicationConfiguration(classes = EmergingTrendsApplication.class)
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
         TransactionalTestExecutionListener.class})
-public class BaseTest
-{
+public class BaseTest {
+    @Autowired
+    public SeedService seedService;
     @Autowired
     ClubRepository clubRepository;
     @Autowired
     SchoolRepository schoolRepository;
     @Autowired
     StudentRepository studentRepository;
-
     @Autowired
     StudentService studentService;
-
     @Autowired
     SchoolService schoolService;
-
     @Autowired
     ClubService clubService;
-
-    @Autowired
-    public SeedService seedService;
 }
